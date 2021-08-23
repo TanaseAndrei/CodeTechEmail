@@ -40,6 +40,7 @@ public class MailService {
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
         mimeMessageHelper.setText(mail.getBody(), true);
         mimeMessageHelper.setTo(mail.getTo());
+        mimeMessageHelper.setSubject(mail.getSubject());
         mimeMessageHelper.setFrom(from);
         return mimeMessageHelper.getMimeMessage();
     }
