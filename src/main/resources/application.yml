@@ -1,0 +1,20 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /mail
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: st0neheart741998@gmail.com
+    password: jreiflwsxcaqsxzw
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+application:
+  mail:
+    from: st0neheart741998@gmail.com
