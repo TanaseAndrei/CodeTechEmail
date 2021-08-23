@@ -16,5 +16,6 @@ spring:
             enable: true
 
 application:
+  version: @project.version@
   mail:
     from: st0neheart741998@gmail.com

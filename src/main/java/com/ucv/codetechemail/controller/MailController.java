@@ -1,6 +1,7 @@
 package com.ucv.codetechemail.controller;
 
 import com.ucv.codetechemail.controller.model.input.RegisterEmailDto;
+import com.ucv.codetechemail.controller.swagger.MailApi;
 import com.ucv.codetechemail.facade.MailFacade;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping
 @AllArgsConstructor
-public class MailController {
+public class MailController implements MailApi {
 
     private final MailFacade mailFacade;
 
