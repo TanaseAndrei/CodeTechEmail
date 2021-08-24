@@ -29,6 +29,7 @@ public class MailService {
             log.info("Sending email to {}", mail.getTo());
             MimeMessage mimeMessage = createMimeMessage(mail);
             javaMailSender.send(mimeMessage);
+            log.info("Sent register email to {}", mail.getTo());
         } catch (MailException | MessagingException mailException) {
             log.error("An error occurred while sending an email to {}", mail.getTo(), mailException);
             throw new AppException("An error occurred while sending an email to " + mail.getTo(), HttpStatus.INTERNAL_SERVER_ERROR);

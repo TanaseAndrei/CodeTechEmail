@@ -17,9 +17,9 @@ public class MailFacade {
     private final MailService mailService;
 
     public void register(RegisterEmailDto registerEmailDto) {
+        log.info("Getting email template for role {}", registerEmailDto.getRole().name());
         String email = RegisterEmailTemplate.getEmailTemplate(registerEmailDto.getRole(), registerEmailDto.getUsername());
         mailService.sendEmail(createRegisterMail(registerEmailDto.getTo(), email));
-        log.info("Sent register email to {}", registerEmailDto.getTo());
     }
 
     private Mail createRegisterMail(String to, String body) {
