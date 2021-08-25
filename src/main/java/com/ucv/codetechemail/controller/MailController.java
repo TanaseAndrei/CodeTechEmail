@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping
 @AllArgsConstructor
@@ -18,7 +20,7 @@ public class MailController implements MailApi {
     private final MailFacade mailFacade;
 
     @PostMapping(path = "/register", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void register(@RequestBody RegisterEmailDto registerEmailDto) {
+    public void register(@Valid @RequestBody RegisterEmailDto registerEmailDto) {
         mailFacade.register(registerEmailDto);
     }
 }
