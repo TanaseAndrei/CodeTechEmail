@@ -1,7 +1,6 @@
 server:
   port: 8082
-  servlet:
-    context-path: /mail
+
 spring:
   mail:
     host: smtp.gmail.com
