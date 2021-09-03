@@ -2,6 +2,6 @@ version: '3'
 services:
   email-service:
     container_name: codetech-email
-    build: /
+    build: .
     ports:
       - "8010:8082"
