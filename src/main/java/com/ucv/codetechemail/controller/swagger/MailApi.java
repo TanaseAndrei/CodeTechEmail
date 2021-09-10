@@ -11,7 +11,7 @@ import org.springframework.http.MediaType;
 public interface MailApi {
 
     @ApiOperation(value = "Sends a registration email to the targeted email", httpMethod = "POST",
-            consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+            consumes = MediaType.APPLICATION_JSON_VALUE)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully sent a email address"),
             @ApiResponse(code = 500, message = "Internal server error")
