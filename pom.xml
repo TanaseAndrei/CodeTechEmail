@@ -13,7 +13,7 @@
 
     <groupId>com.ucv</groupId>
     <artifactId>CodeTechEmail</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1</version>
     <name>CodeTechEmail</name>
     <description>CodeTechEmail</description>
 
@@ -24,6 +24,19 @@
         <swagger-ui.version>2.9.2</swagger-ui.version>
         <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
     </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Snapshot repositories</name>
+            <url>https://andreit98.jfrog.io/artifactory/andrei-libs-snapshot-local</url>
+        </snapshotRepository>
+        <repository>
+            <id>central</id>
+            <name>Release repositories</name>
+            <url>https://andreit98.jfrog.io/artifactory/andrei-libs-release-local</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -72,6 +85,13 @@
             <version>${hibernate-validator.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -79,6 +99,17 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>5.8.1</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
